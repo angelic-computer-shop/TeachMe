@@ -1,0 +1,195 @@
+<div class="container scrollable  side-margins">
+  <div class="d-flex justify-content-left align-items-center">
+    <div class="">
+      <div class="card-body p-head">
+        <div class="d-flex text-black">
+          <div class="flex-shrink-0">
+            <div *ngIf="img">
+            <img src={{img}} 
+              class="img-fluid profileImage" style="width: 70px; height: 70px; border-radius: 50%; flex-shrink: 0; overflow: hidden; object-fit: cover;" />
+            </div>
+              <div *ngIf="!img">
+                <img
+                  src="../../../assets/img/profile_placeholder.jpeg"
+                  
+                  class="img-fluid profileImage"
+                  style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; flex-shrink: 0;"
+                />
+              </div>
+
+          </div>
+          <div class="flex-grow-1 ms-3">
+            <h5 class="mb-1 mt-1" style="font-size: large; font-weight: bold;">Welcome back</h5>
+            <p class="mb-1 p-1" style="color: #2b2a2a">
+              {{ name }} {{ surname }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr />
+
+  <div class="headingFont d-flex justify-content-center my-3">
+    Simplifying Banking Terms
+  </div>
+  <app-search-bar></app-search-bar>
+ 
+ 
+
+
+
+  <div class="headingFont d-flex" style="margin-top: 28px; margin-bottom: 16px">
+    {{ cardLabel }}
+  </div>
+
+
+  <!-- =================recyclerview FOR ALREADY EXISTING USERS================ -->
+  <div style="height:250px" *ngIf="searchedBefore">
+
+
+<div *ngIf="isLoading"  style="height: auto; " 
+  class="d-flex flex-row flex-nowrap overflow-auto  card-block">
+ <app-card-loader class="card cardStyleLoading card-block mx-2" style="min-width: 250px;"></app-card-loader> 
+ <app-card-loader class="card cardStyleLoading card-block mx-2" style="min-width: 250px;"></app-card-loader>
+</div>
+
+
+    <div *ngIf="searchedBefore && !isLoading" style="height: auto" class="d-flex flex-row flex-nowrap overflow-auto">
+      <div *ngFor="let searchObj of favoutitesArray">
+        <div *ngIf="searchObj.ishumour" class="card cardStyle card-block mx-2" style="min-width: 250px; background-color: #64d2ff">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <h5 class="card-title" style="color: #212529">{{searchObj.query_searched | titlecase}}</h5>
+             
+            </div>
+            
+            <p class="card-text">
+              {{searchObj.response_searched}}
+              <span >
+                😂
+              </span>
+            </p>
+          </div>
+          <div class="d-flex push-to-bottomm justify-content-between" style="width: 100%">
+            <span class="badge bg-light text-dark px-3" routerLink="/lesson-plan-calender">Learn more</span>
+            <!-- <b class="small">(Humour)</b> -->
+
+                <!-- Add an Unfavorite button here -->
+                <a class="btn-link" (click)="unfavoriteSearch(searchObj.id)">
+                  <i style="color: whitesmoke;" class="bi bi-star-fill"></i>
+                </a>
+                
+          </div>
+        </div>
+
+
+        <div *ngIf="!searchObj.ishumour" class="card cardStyle card-block mx-2"
+          style="min-width: 250px; background-color: #00C7BE">
+
+          <div class="card-body">
+
+            <h5 class="card-title" style="color: #212529">{{searchObj.query_searched | titlecase}}</h5>
+
+            <p class="card-text">
+              {{searchObj.response_searched}}
+            </p>
+
+          </div>
+          <div class="d-flex push-to-bottomm justify-content-between" style="width: 100%">
+            <span class="badge bg-light text-dark px-3" routerLink="/lesson-plan-calender">Learn more</span>
+  
+                <!-- Add an Unfavorite button here -->
+                <a class="btn-link" (click)="unfavoriteSearch(searchObj.id)">
+                  <i class="bi bi-star-fill" style="color: whitesmoke;"></i>
+                </a>
+           
+          </div>
+        </div>
+
+      
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+<!-- =================recyclerview FOR FUN FACTS================ -->
+<div style="height:250px" *ngIf="!searchedBefore">
+<div class="d-flex flex-row flex-nowrap overflow-auto" *ngIf="!searchedBefore" style="height: auto">
+  <div class="card cardStyle card-block mx-2" style="min-width: 240px">
+    <div class="card-body">
+      <h5 class="card-title" style="color: #212529">
+        Did you know?
+      </h5>
+      <p class="card-text">
+        The name "ABSA" stands for "Amalgamated Banks of South Africa.
+      </p>
+    </div>
+    <!-- <span class="badge bg-light text-dark push-to-bottomm">Learn more</span> -->
+  </div>
+  <div class="card cardStyle card-block mx-2" style="min-width: 240px; background-color: #64d2ff">
+    <div class="card-body">
+      <h5 class="card-title" style="color: #212529;">
+        Did you know?
+      </h5>
+      <p class="card-text">
+        ABSA provides a wide range of financial services, including retail
+        banking, corporate and investment banking, wealth management, and
+        insurance.
+      </p>
+    </div>
+    <!-- <span class="badge bg-light text-dark push-to-bottomm">Learn more</span> -->
+  </div>
+  <div class="card cardStyle card-block mx-2" style="min-width: 240px">
+    <div class="card-body">
+      <h5 class="card-title" style="color: #212529"> Did you know?</h5>
+      <p class="card-text">
+        While Absa is based in South Africa, it has a significant presence across the African continent. It operates in several countries, making it one of the largest financial institutions in Africa.
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+<!-- <div style="z-index: -9999999; padding-top: 2px">
+
+  <svg xmlns="http://www.w3.org/2000/svg" width="auto" height="" viewBox="0 0 375 163" fill="none">
+    <path d="M0.5 42.0645H374.5V136.71H0.5V42.0645Z" fill="white" />
+    <path
+      d="M90.5 115.677C90.5 141.813 70.3528 163 45.5 163C20.6472 163 0.5 141.813 0.5 115.677C0.5 89.5419 20.6472 68.3548 45.5 68.3548C70.3528 68.3548 90.5 89.5419 90.5 115.677Z"
+      fill="url(#paint0_linear_983_5022)" />
+    <path
+      d="M308.5 68.3548C308.5 106.106 279.399 136.71 243.5 136.71C207.601 136.71 178.5 106.106 178.5 68.3548C178.5 30.6035 207.601 0 243.5 0C279.399 0 308.5 30.6035 308.5 68.3548Z"
+      fill="url(#paint1_linear_983_5022)" />
+    <defs>
+      <linearGradient id="paint0_linear_983_5022" x1="187.5" y1="0" x2="187.5" y2="163" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#48CAE4" />
+        <stop offset="0.8" stop-color="#D9D9D9" stop-opacity="0" />
+      </linearGradient>
+      <linearGradient id="paint1_linear_983_5022" x1="243.5" y1="0" x2="243.5" y2="136.71"
+        gradientUnits="userSpaceOnUse">
+        <stop stop-color="#46F1D2" />
+        <stop offset="0.6" stop-color="#D9D9D9" stop-opacity="0" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <div class="alert alert-info alertPosition" *ngIf="this.undoDelete" role="alert">
+    <div class="d-flex justify-content-between">
+      <span>Removed from favourites</span>
+      
+      <span (click)="contDelete()">Undo</span>
+
+    </div>
+  </div>
+
+
+</div> -->
+
+</div>

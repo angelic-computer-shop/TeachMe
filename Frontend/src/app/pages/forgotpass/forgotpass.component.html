@@ -1,0 +1,34 @@
+
+
+<div class="container side-margins fullScreenWithTitle scrollable ">
+  <!-- <div class="bd-highlight headerTop" routerLink="/login">
+    <span class="span fs-3 mybgcolor ">Bank</span><span class="text-wrapper-2  fs-3">Lingo</span>
+  </div> -->
+  
+    <h6 class="text-center mb-5 headerTop">Enter your email to receive an OTP</h6>
+
+  <div class="row d-flex align-items-center mt-5 flex-column">
+    <img
+      class="woman-shaking-hands"
+      alt="Woman shaking hands"
+      src="assets/img/Guy with the key is trying to log into his account.png"
+    />
+  </div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <br>
+  <div class="form-outline mb-4">
+    <input
+      type="email"
+      id="form3Example3cg"
+      class="form-control form-control-lg"
+      style="border: 1px solid; border-color: black;"
+      formControlName="email"
+      placeholder="Email address"
+    />
+  </div>
+  <br>
+  <div class="row d-flex align-items-center flex-column">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+</div>

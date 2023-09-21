@@ -1,0 +1,49 @@
+<!--Rounded container containing search layout -->
+<div class="rounded d-flex">
+  <div class="searchLayout form-group card">
+    <!-- Microphone icon container, displayed if browser supports speech recognition -->
+    <div class="microphonebox" *ngIf="browserSupport === true">
+      <!-- Container for microphone icon, displayed when not recognizing speech -->
+      <div class="microphone_container" *ngIf="isRecognizing === false">
+
+        <!-- Microphone icon with click event to start recognition -->
+        <i class="bi bi-mic-fill" (click)="startRecognition()"></i>
+      </div>
+        <!-- Container for microphone icon, displayed when recognizing speech -->
+      <div class="microphone_container_recording" *ngIf="isRecognizing === true">
+           <!-- Muted microphone icon with click event to stop recognition -->
+        <i class="bi bi-mic-mute-fill" (click)="stopRecognition()"></i>
+      </div>
+    </div>
+      <!-- Input field for search query -->
+     <div class="form-control rounded inputBorder">
+
+      <input type="search"  [(ngModel)]="queryText" style="width: 100%"
+        placeholder="Ask me to explain anything..." aria-label="Search" aria-describedby="search-addon"
+        (input)="onTextboxInput($event)" />
+        <span class="spinner-border spinner-border-sm" role="status" *ngIf="isSearchingLoader" aria-hidden="true" ></span>
+
+     </div>
+        
+      <!-- Search button with icon -->
+    <span class="input-group-text border-0 btnBorder gap-1" id="search-addon" (click)="searchQuery()">
+      <i class="bi bi-search" style="color:  #38a3a5;   stroke-width: 2"></i>
+    </span>
+  </div>
+</div>
+
+<!-- Card container for the humor switch -->
+<div class="card humorPosition form-group">
+  <label class="form-check-label" for="flexSwitchCheckDefault" style="color: #212529">Sense of Humour</label>
+  
+  <!-- Form check for the humor switch -->
+  <div class="form-check form-switch">
+<!-- Checkbox input for the humor switch with two-way data binding -->
+
+    <input class="form-check-input"  type="checkbox" [(ngModel)]="humourSwitch" role="switch"
+      id="flexSwitchCheckDefault" />
+  </div>
+</div>
+
+
+

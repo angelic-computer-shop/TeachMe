@@ -1,0 +1,8 @@
+
+<div class="offline-overlay" [ngClass]="{'online-background': !isOffline}">
+  <div class="offline-message" *ngIf="showMessage">
+    {{ message }}
+  </div>
+</div>
+
+

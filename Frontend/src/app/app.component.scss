@@ -1,0 +1,41 @@
+
+
+
+
+  /* Set the container to occupy the full viewport height */
+.container1 {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  // align-items: center;
+}
+
+
+/* Make the router-outlet fill the remaining space */
+router-outlet {
+  flex: 1;
+  height:80vh;
+  z-index: 1;
+  overflow-y: auto; /* Enable scrolling for the content area if needed */
+}
+
+/* Define a fixed height for the bottom navigation bar */
+.navbarSize {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  background-color: white;
+  height: auto; /* Adjust this value as needed */
+}
+
+
+.titleBarSize {
+  position: absolute;
+  top: 0;
+  height:fit-content;
+  width: 100%;
+  z-index: 2;
+  
+}

@@ -1,0 +1,23 @@
+.margins{
+    font-size:larger;
+    font-weight: bold;
+    position: absolute;
+    height:fit-content;
+    top: 0;
+    width: 100%;
+    margin-top:1px;
+    background-color: white;
+}
+
+/* Center the page title */
+.navbar-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Adjust the icon spacing */
+  .navbar-brand {
+    margin-right: 10px;
+  }
+  

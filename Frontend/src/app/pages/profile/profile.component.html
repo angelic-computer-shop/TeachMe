@@ -1,0 +1,91 @@
+
+   
+
+<div
+  class="container scrollable side-margins fullScreenWithTitle"
+  *ngIf="user.email !== 'tester@gmail.com'">
+     
+  <div class="">
+  
+      <div class="mb-4 pt-2">
+        <div class="card-body text-center">
+          <div class="">
+            <div *ngIf="user.profile_picture">
+              <img
+                src="{{ user.profile_picture }}"
+                alt="Generic placeholder image"
+                class="img-fluid profileImage"
+                style="width: 100px; height: 100px; border-radius: 50%; flex-shrink: 0; object-fit: cover; "
+              />
+            </div>
+            <div *ngIf="!user.profile_picture">
+              <img
+                src="../../../assets/img/profile_placeholder.jpeg"
+                alt="Generic placeholder image"
+                class="img-fluid profileImage"
+                style="width: 120px; height: 120px; border-radius: 120px"
+              />
+            </div>
+          </div>
+          
+          <h5 class="my-3">{{ user.name }} {{ user.surname }}</h5>
+          <div class="">
+          <div class="mb-2">
+            <a routerLink="/edit_profile">
+              <button type="button" style="width:100%" class="btn btn-primary">
+                Edit Profile
+              </button>
+            </a>
+          </div>
+        </div>
+     
+    </div>
+  
+    <div class="my-4">
+    <div class="col-lg-12">
+      <div class="card mb-4">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">First Name</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0">{{ user.name }}</p>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Last Name</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0">{{ user.surname }}</p>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Age</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0">{{ user.age }}</p>
+            </div>
+          </div>
+          <hr/>
+
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Email Address</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0">{{ user.email }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>

@@ -1,0 +1,32 @@
+
+<div class="container scrollable  side-margins fullScreenWithTitle">
+  <h5 class="text-center mb-2 headingFont headerTop">Select duration of your lesson plan</h5><br>
+
+  <form (ngSubmit)="onSaveDate()">
+    <br>
+    <div class="calendar-container">
+      <full-calendar style="height:max-content" [options]="calendarOptions"></full-calendar>
+    </div>
+    <div class="d-flex justify-content-center pt-2">
+      <div *ngIf="duration.length > 0">
+        <h5> {{ getSelectedDaysCount() }} Days selected</h5>
+      </div>
+    </div>
+
+
+
+    <!-- <app-loader *ngIf="isLoading"> </app-loader> -->
+
+
+    <div class="d-flex justify-content-center py-4">
+      <button type="submit" class="btn btn-primary" (click)="onSaveDate()" [disabled]="isLoading">{{updateBtn}}
+        <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      </button>
+  
+    </div>
+
+
+
+  </form>
+
+</div>

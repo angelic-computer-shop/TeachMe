@@ -1,0 +1,136 @@
+img {
+  height: 30vh;
+  width: 70vw;
+}
+// .btn {
+//   width: 80vw;
+//   border-radius: 999em 999em 999em 999em;
+//   background-color: #38a3a5;
+//   color: white;
+//   font-weight: 500;
+//   box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.363);
+// }
+
+.mybgcolor {
+  color: #38a3a5;
+  font-weight: 900;
+  font-size: 30px;
+}
+.lingo {
+  color: black;
+  font-weight: 900;
+  font-size: 30px;
+}
+.imageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+.slogan {
+  width: 40%;
+  margin: 0 auto;
+  font-weight: 300;
+  p {
+    font-weight: 400;
+    color: rgba(54, 54, 54, 0.965);
+  
+    strong {
+      font-weight: 500;
+      color: #38a3a5;
+      background-color: #38a3a52e;
+      padding:2px;
+      border-radius: 10px;
+    }
+  }
+}
+.flex-column {
+  button {
+    width: 150px;
+  }
+}
+.welcome {
+  h1 {
+    font-size: 60px;
+    font-weight: 600;
+  }
+}
+.no-account {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.link {
+  text-decoration: none;
+  color: #38a3a5;
+}
+.link:hover {
+  color: #38a3a5;
+  text-decoration: underline;
+}
+@media (width <= 900px) {
+  .container {
+  }
+  .welcome {
+    h1 {
+      text-align: center;
+      font-size: 30px;
+      font-weight: 600;
+    }
+  }
+  .slogan {
+    width: 90%;
+  }
+
+  .imageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    img {
+      height: auto;
+      max-width: 60%;
+    }
+  }
+}
+
+@media (min-width: 992px) { 
+    /* Add your desktop responsive styles here */
+
+    /* Example: Increase font size for desktop */
+    body {
+        font-size: 16px;
+    }
+
+    /* Example: Adjust layout for desktop */
+    .container {
+        width: 960px;
+        margin: 0 auto;
+    }
+
+    /* Example: Show/hide elements for desktop */
+    .mobile-only {
+        display: none;
+    }
+
+    .desktop-only {
+        display: block;
+
+    }
+
+    img{
+        height: 30vh;
+        width: 70vw;
+    }
+}
+
+
+
+
+
+

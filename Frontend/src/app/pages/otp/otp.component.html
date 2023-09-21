@@ -1,0 +1,40 @@
+<div class="container scrollable fullScreenWithTitle side-margins">
+
+
+    <div>
+      
+
+        <div class=" bd-highlight text-center mb-5 headerTop">
+            <h6>Please enter the OTP sent to your email to continue</h6>
+
+        </div>
+        <div class="row d-flex align-items-center mt-5 flex-column ">
+            <img class="woman-shaking-hands" src="assets/img/Guy with the key is trying to log into his account.png" />
+        </div>
+        <div id="otp" class="d-flex flex-row justify-content-center " style="color: #444">
+            <input class="text-center form-control-lg form-control " placeholder="****" type="text" [(ngModel)]="otp" maxlength="6" />
+        </div>
+        <br>
+        <div class="row d-flex align-items-center flex-column mb-5">
+            <button type="submit" class="btn btn-primary" (click)="verifyOtp()">Submit
+            </button>
+        </div>
+
+
+        <div class=" bd-highlight text-center">
+            <span class="py-2">Did not receive the OTP? </span>
+            <br/>
+            <h6 *ngIf="!isResendDisabled">Resend OTP in<b> {{remainingTime}}</b></h6>
+            <button type="button" *ngIf="isResendDisabled" (click)="resendOtp()" class="btn btn-sm btn-outline-secondary">Resend</button>
+
+        </div>
+        <br>
+
+        <br />
+       
+     
+      
+       
+
+    </div>
+</div>

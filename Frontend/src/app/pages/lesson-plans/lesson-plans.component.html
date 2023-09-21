@@ -1,0 +1,45 @@
+<div class="container scrollable centerCards side-margins fullScreenWithTitle">
+  <div class="">
+
+<div *ngIf="isLoading" style="height: auto; " class="">
+  <app-card-loader class="card cardStyleLoading card-block my-2" style="min-width: 250px; height:220px"></app-card-loader>
+  <app-card-loader class="card cardStyleLoading card-block my-2" style="min-width:250px;  height:220px"></app-card-loader>
+    <!-- <app-card-loader class="card cardStyleLoading card-block my-2" style="min-width:250px;  height:220px"></app-card-loader> -->
+
+</div>
+
+
+    <div class="card text-white mb-3" style="background-color: #00c7be"
+      *ngFor="let allLessonPlans of allPlans; let i = index">
+      <div class="card-header d-flex align-items-center justify-content-between">
+        <span>{{ progressStatus[i] }}</span>
+        <span><b>{{ percentComplete[i].toFixed(0) }}%</b></span>
+      </div>
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <h5 class="card-title">{{ allLessonPlans.plan_name  | titlecase}}</h5>
+          <a class="btn-link" (click)="removeLesson(allLessonPlans.plan_id)">
+            <i class="bi bi-trash-fill" style="color:black"></i> 
+          </a>
+        </div>
+        <p class="card-text">{{ allLessonPlans.lesson_description }}</p>
+            <!-- deleting a lesson plan -->
+        <!-- <a class="btn-link" (click)="removeLesson(allLessonPlans.plan_id)">
+          <i class="bi bi-trash-fill"></i> 
+        </a> -->
+      </div>
+      <div class="card-footer">
+        <div class="d-flex align-items-center justify-content-between">
+          <span>{{ allLessonPlans.days_count }}/{{ allLessonPlans.duration }} days
+            complete</span>
+                 <!-- deleting a lesson plan -->
+        
+          
+                 <a [routerLink]="['/testing', allLessonPlans.plan_id]" class="badge bg-dark">Continue</a>
+
+               
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

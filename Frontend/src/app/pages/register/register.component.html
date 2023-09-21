@@ -1,0 +1,102 @@
+<div class="container scrollable  side-margins">
+
+
+
+
+<section class="bg-image">
+  <div class="d-flex align-items-center justify-content-center">
+    <div class=" h-100">
+      <div class=" d-flex justify-content-center align-items-center">
+    
+        <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="card-body">
+              
+              <div class=" bd-highlight mb-2 headerTop">
+                <span class="span fs-3 mybgcolor">Bank</span><span class="text-wrapper-2  fs-3">Lingo</span>
+              </div>
+
+              <h2 class="text-center mb-5 headerTop" >Register</h2>
+
+              <form [formGroup]="fb" (ngSubmit)="onSubmit()">
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="name" class="form-control form-control-lg" style=" border: 1px solid; "
+                  id="name"
+                  formControlName="name" placeholder="First Name"/>
+                  <div *ngIf="fb.get('name')?.invalid && (fb.get('name')?.dirty || fb.get('name')?.touched)" class="error-text">
+                    <div *ngIf="fb.get('name')?.errors?.['required']">Name is required.</div>
+                    <div *ngIf="fb.get('name')?.errors?.['minlength']">Name must be at least 3 characters long.</div>
+                </div>
+                </div>
+                <div class="form-outline mb-4">
+                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" style=" border: 1px solid;"
+                    id="surname"
+                    formControlName="surname"  placeholder="Last Name"/>
+                    <div *ngIf="fb.get('surname')?.invalid&&fb.get('surname')?.touched || fb.get('surname')?.dirty" class="error-text">
+                      <div *ngIf="fb.get('surname')?.errors?.['required']">Surname is required.</div>
+                      <div *ngIf="fb.get('surname')?.errors?.['minlength']" class="error-text">Surname must be at least 3 characters long.</div>
+                  </div>
+
+                </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" style=" border: 1px solid;"
+                    id="age"
+                    formControlName="age" placeholder="Age"/>
+
+                    <div *ngIf="fb.get('age')?.invalid&&fb.get('age')?.touched" class="error-text">
+                      <div *ngIf="fb.get('age')?.errors?.['required']">Age is required</div>
+                      <div *ngIf="fb.get('age')?.errors?.['invalidAge']">Age must be at least 2 or 3 numbers</div>
+                  </div>
+                    
+                  </div>
+
+                <div class="form-outline mb-4">
+                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" style=" border: 1px solid;"
+                id="email"
+                    formControlName="email" placeholder="Email address"/>
+
+                    <div *ngIf="fb.get('email')?.invalid&&fb.get('email')?.touched" class="error-text">
+                        <div *ngIf="fb.get('email')?.errors?.['required']">Email is required</div>
+                        <div *ngIf="fb.get('email')?.errors?.['email']">Invalid email</div>
+                    </div>
+                  
+                  
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" style=" border: 1px solid;"
+                  id="password"
+                      formControlName="password" placeholder="Password"/>
+                  <div *ngIf="fb.get('password')?.invalid && fb.get('password')?.touched || fb.get('password')?.dirty" class="error-text">
+                    <div *ngIf="fb.get('password')?.errors?.['required']">Password required.</div>
+                    <div *ngIf="fb.get('password')?.errors?.['minlength']">Password  must be at least 8 characters long.</div>
+                    <div *ngIf="fb.get('password')?.errors?.['invalidPassword']">Password must contain at least one symbol, one number, and one letter.</div>
+                  </div>
+                 
+                </div>
+
+                <div *ngIf="regInvalid" class="text-center text-danger mb-3">
+                  Please fill in all required fields
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-primary">Register</button>
+                </div>
+                <p class="text-center text-muted my-4">or</p>
+
+                <p class="text-center text-muted">Already have an account? <a href="#!" routerLink="/login"
+                    class="text ml-1 font-medium text-blue-400"><u>Login here</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</section>
+
+</div>

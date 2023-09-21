@@ -1,0 +1,35 @@
+<div class="container scrollable  side-margins fullScreenWithTitle">
+
+<div *ngFor="let x of particularDay; let i = index" class="topic_container cardHeight">
+  <div class="card cardHeight ">
+    <div class="card-body">
+      <h5 class="card-title">{{ someTopics[currentIndex] }}</h5>
+      <div class="spinner-border" role="status" *ngIf="loading == true">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <p *ngIf="loading == false" class="message">{{ Message }}</p>
+
+      
+      
+    </div>
+  </div>
+<div class="button_container">
+  <button *ngIf="currentIndex > 0" (click)="navigateToPreviousTopic()">
+    Previous Topic
+  </button>
+  <button
+    *ngIf="currentIndex < someTopics.length - 1"
+    (click)="navigateToNextTopic()"
+  >
+    Next Topic
+  </button>
+  <button
+    *ngIf="currentIndex === someTopics.length - 1"
+    (click)="onDoneClicked()"
+  >
+    Done
+  </button>
+</div>
+ 
+</div>
+</div>

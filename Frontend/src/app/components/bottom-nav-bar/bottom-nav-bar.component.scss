@@ -1,0 +1,132 @@
+/* Styles for the entire tab bar at the bottom of the iPhone-like interface */
+.tab-bar-iphone {
+    // background-color: #ffffffbf;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  /* Styles for the container holding tab buttons */
+  .tab-bar-iphone .tab-bar-buttons-wrapper {
+    background-color: var(--materialschrome);
+    border: 1px none;
+    height: 73px;
+    mix-blend-mode: hard-light;
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  /* Styles for the tab buttons container */
+  .tab-bar-iphone .tab-bar-buttons {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+  
+    position: relative;
+    top: 7px;
+    width: auto;
+  }
+  
+  /* Styles for each individual tab button */
+  .tab-bar-iphone .frame {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    height: 40px;
+    padding: 2px 10px;
+    position: relative;
+    width: 48px;
+  }
+
+/* Styles for active tab buttons */
+  .tab-bar-iphone .frame.active  {
+ color:#004ec2;
+ font-weight: bold;
+  }
+ 
+  
+  .tab-bar-iphone .img {
+    height: 21px;
+    position: relative;
+    width: 24px;
+  }
+  
+  /* Styles for image icons within tab buttons */
+  .tab-bar-iphone .label {
+    color: var(--colorsblue);
+    font-family: "SF Pro-Medium", Helvetica;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-left: -0.5px;
+    margin-right: -0.5px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  /* Styles for label text within tab buttons */
+  .tab-bar-iphone .text-wrapper {
+    color:black;
+    font-family: "SF Pro-Medium", Helvetica;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-left: -3.5px;
+    margin-right: -3.5px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  
+  .tab-bar-iphone .div {
+    color: #999999;
+    font-family: "SF Pro-Medium", Helvetica;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+
+  .push-to-bottom {
+    position:sticky;
+    bottom: 0px;
+    left: 0;
+    padding-left:16px;
+    padding-right:16px;
+
+  }
+
+  #homeNav :after{
+    background-color: green;
+    color: green;
+    background: green;
+  }
+
+  #homeNav :active{
+    background-color: green;
+    color: green;
+    background: green;
+  }
+
+  #homeNav svg :active{
+    background-color: green;
+    color: green;
+    background: green;
+  }
+
+  

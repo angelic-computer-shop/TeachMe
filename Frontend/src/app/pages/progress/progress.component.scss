@@ -1,0 +1,50 @@
+
+  
+  /* The first div takes up the entire screen */
+  // .full-height {
+  //   background-color: lightblue;
+  // }
+  
+  /* The second div has a height of 11% */
+  // .small-height {
+  //   background-color: lightgreen;
+  // }
+.image-container {
+    display: flex;
+    justify-content: left; /* Center content horizontally */
+    align-items: left; /* Center content vertically */
+    margin-left: 10%;
+    
+  }
+
+
+  .staggeredCustom{
+     column-count: 2;
+     }
+
+
+  .customCard{
+    width:auto;
+    height:auto;
+    padding:8px;
+    margin-bottom:1.2rem;
+    border-radius: 14px;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+
+
+  }
+
+  .bigCard{
+    height:7rem;
+     background-color:#64d2ff;
+  }
+
+  .smallCard{
+
+       background-color: #00C7BE;
+  }
+
+  
+  

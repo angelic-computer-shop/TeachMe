@@ -1,0 +1,64 @@
+<div class="container scrollable  side-margins fullScreenWithTitle">
+
+  <div class="">
+
+  
+<div class="headingFont headerTop mb-3">
+<span >Lesson plans summary</span>
+</div>
+
+  <div class="staggeredCustom" >
+    <div class="customCard  card justify-content-center align-items-center bigCard " style="background-color: #C7F9CC;" >
+        <h1><b>{{ lessonCount }}</b></h1>
+          <b>Total</b>
+
+    </div>
+
+    <div class="customCard card justify-content-center align-items-center smallCard" >
+      <h1><b>{{startedProgressCount}}</b> </h1>
+      <b>In progress</b>
+    </div>
+
+    <div class="customCard card justify-content-center align-items-center smallCard" style="background-color: #80ED99;" >
+      <h1><b>{{ zeroProgressCount }}</b></h1>
+      <b>Not started</b>
+    </div>
+
+    <div class="customCard card justify-content-center align-items-center bigCard" style="background-color: #38A3A5;">
+      <h1><b>{{countTaskCompleted}}</b></h1>
+      <b>Completed</b>
+    </div>
+
+
+  </div>
+</div>
+
+
+  <div class="headingFont d-flex justify-content-left my-3">
+    Progress status of my lessons
+  </div>
+  <div class="card p-2  mb-md-0">
+  
+  
+  
+  
+    <!-- Displaying the terms -->
+    <div *ngFor="let processed of processedData" style="padding:10px">
+      <div>{{ processed.data.plan_name | titlecase}}</div>
+      <div class="progress">
+        <div class="progress-bar" style="background-color: #38A3A5;"  role="progressbar" [style.width.%]="processed.progressValue"
+          [attr.aria-valuenow]="processed.progressValue" [attr.aria-valuemin]="0" [attr.aria-valuemax]="100">
+          {{ processed.progressValue.toFixed(0) }}%
+        </div>
+  
+  
+      </div>
+  
+    </div>
+  
+  
+  </div>
+
+
+
+</div>

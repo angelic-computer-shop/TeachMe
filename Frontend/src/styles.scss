@@ -1,0 +1,105 @@
+/* You can add global styles to this file, and also import other style files */
+/* styles.scss or styles.css */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+
+
+.headingFont {
+  color: #38a3a5;
+  font-feature-settings: "clig" off, "liga" off;
+  /* Headline/Regular */
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 590;
+  line-height: 22px; /* 129.412% */
+  letter-spacing: -0.4px;
+}
+
+.fullScreen {
+  width: 100%;
+  // height: 89vh; /* Set the container height to 80% of the screen height */
+  // overflow-y: scroll;
+}
+
+.fullScreenWithTitle {
+padding-top:64px;
+padding-bottom:94px;
+}
+
+.push-to-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.side-margins {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.scrollable{
+  height:100vh;
+  overflow-y: scroll;
+  // padding-bottom:11vh;
+  // padding-top:56px;
+  // width:100%;
+  // margin-top:4px;
+
+}
+
+.headerTop {
+  padding-top: 30px;
+}
+
+.startTop {
+  padding-top: 30px;
+}
+
+.btn-primary {
+  width: 80vw;
+  height: 6vh;
+  
+  border-radius: 999em 999em 999em 999em;
+  background-color: #38a3a5;
+  border-color: #38a3a5;
+}
+
+.btn-primary:hover{
+  background-color: #22577A;
+  border-color: #22577A;
+}
+
+.primaryCardColour{
+      background-color: #00C7BE;
+}
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+//     font-size: 17px;
+//     font-style: normal;
+//     font-weight: 590;
+//     letter-spacing: -0.4px; }
+/* styles.css (or your component's CSS file) */
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.mybgcolor {
+  color: #38a3a5;
+  font-weight: 900;
+  font-size: 30px;
+}
+.lingo {
+  color: black;
+  font-weight: 900;
+  font-size: 30px;
+}
